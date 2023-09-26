@@ -1,0 +1,27 @@
+{
+  "private": true,
+  "name": "@-ft/disposer",
+  "version": "0.1.0",
+  "description": "util Disposer",
+  "types": "./index.d.ts",
+  "main": "./index.js",
+  "scripts": {
+    "build": "rimraf compile dist && tsc -p tsconfig.compile.json && rollup -c && dts-bundle-generator --no-banner -o dist/index.d.ts compile/index.d.ts",
+    "publish": "npm run build && package-json-minifier && cpy README.md dist && cd dist && npm publish"
+  },
+  "author": "Juyeong Maing <mjy9088@naver.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/42ts/-ft-disposer.git"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@rollup/plugin-terser": "^0.4.3",
+    "cpy-cli": "^5.0.0",
+    "dts-bundle-generator": "^8.0.1",
+    "package.json-minifier": "^0.0.4",
+    "rimraf": "^5.0.1",
+    "rollup": "^3.28.1",
+    "typescript": "^5.2.2"
+  }
+}
