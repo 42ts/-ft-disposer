@@ -22,7 +22,7 @@ export class Disposer {
   }
 
   public add(...items: (AnyDisposable | false)[]): this {
-    items.push(
+    this.items.push(
       items.filter((item): item is Disposable | AnyDisposable[] => !!item)
     );
     return this;
